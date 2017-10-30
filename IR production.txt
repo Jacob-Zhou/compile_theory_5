@@ -1,0 +1,25 @@
+instruction -> MOV dual_operands 1
+             | ADD triple_operands 2
+             | SUB triple_operands 2
+             | MUL triple_operands 2
+             | DIV triple_operands 2
+             | JMP operand 1
+             | JE  dt_operands 1,2
+             | JL  dt_operands 1,2
+             | JG  dt_operands 1,2
+             | NOP 0
+
+dt_operands -> operand , dt_operands_1
+
+dt_operands_1 -> id dt_operands_2
+               | num , id
+
+dt_operands_2 -> , id
+               | null
+
+triple_operands -> operand , dual_operands
+
+dual_operands -> operand , id
+
+operand -> id
+         | num

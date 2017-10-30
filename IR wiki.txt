@@ -1,0 +1,43 @@
+IR语句由 11 种命令组成: MOV, ADD, SUB, MUL, DIV, JMP, JE, JL, JG, NOP, HLT;
+
+MOV S/I, D          ;将S/I存入D中
+ADD S/I, S/I, D     ;S/I + S/I存入D中
+SUB S/I, S/I, D     ;S/I - S/I存入D中
+MUL S/I, S/I, D     ;S/I * S/I存入D中
+DIV S/I, S/I, D     ;S/I / S/I存入D中
+JMP Sa/Ia           ;跳转到Sa/Ia
+JE S/I, Sa/Ia       ;如果S/I = 0 跳转到S/I
+JE S/I, S/I , Sa/Ia ;如果S/I = S/I 跳转到S/I
+JL S/I, S/I         ;如果S/I < S/I 跳转到S/I
+JL S/I, S/I , Sa/Ia ;如果S/I < S/I 跳转到S/I
+JG S/I, S/I         ;如果S/I > S/I 跳转到S/I
+JG S/I, S/I , Sa/Ia ;如果S/I > S/I 跳转到S/I
+NOP                 ;空操作, 用于处理空行和注释
+HLT                 ;停机
+
+注: S: 源寄存器, D: 目标寄存器, I: 字面量;
+
+例子: 
+源代码: 
+{
+	a = 100;
+	while(a > 0)
+	{
+		b = a + b;
+		a = a - 1;
+	}
+}
+
+IR:
+ 1:	MOV 100, a
+ 2:	JG  a, 0, 5
+ 3:	MOV 0, t3
+ 4:	JMP 6
+ 5:	MOV 1, t3
+ 6:	JE  t3, 12
+ 7:	ADD a, b, t5
+ 8:	MOV t5, b
+ 9:	SUB a, 1, t7
+10:	MOV t7, a
+11:	JMP 2
+12:	HLT
