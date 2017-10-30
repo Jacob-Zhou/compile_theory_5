@@ -284,6 +284,7 @@ namespace compile_theory_5.Model.IRSystem
 								return new IRToken(IRTokenKind.ID, value, startOffset);
 							}
 						case 2:
+						case 5:
 						case 6:
 							return new IRToken(IRTokenKind.NUM, value, startOffset);
 						case 8:
@@ -413,15 +414,15 @@ namespace compile_theory_5.Model.IRSystem
 			LexMode = false;
 		}
 
-		public void Test()
+		public void Test() //测试词法输出流正确
 		{
 			//ProcessViewModel.Clear();
-			//var t = LexNext();
-			//while (t != null)
-			//{
-			//	ProcessViewModel.Add(new Process(t.kind.ToString(), t.value));
-			//	t = LexNext();
-			//}
+			var t = LexNext();
+			while (t != null)
+			{
+				//ProcessViewModel.Add(new Process(t.kind.ToString(), t.value));
+				t = LexNext();
+			}
 		}
 	}
 }

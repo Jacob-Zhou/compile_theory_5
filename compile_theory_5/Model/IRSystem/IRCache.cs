@@ -14,9 +14,15 @@ namespace compile_theory_5.Model.IRSystem
 		{
 			if (!cache.ContainsKey(address))
 			{
-				cache[address] = IRSystem.parser.ParseLine(address);
+				writeCache(address, IRSystem.parser.ParseLine(address));
 			}
 			return cache[address];
+		}
+
+		private void writeCache(int address, IRProcess process)
+		{
+			cache[address] = IRSystem.parser.ParseLine(address);
+			//TO DO
 		}
 
 		public void Reset()

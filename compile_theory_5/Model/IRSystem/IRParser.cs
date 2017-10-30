@@ -84,6 +84,7 @@ namespace compile_theory_5.Model.IRSystem
 
 		private void BuildProcess(IRTokenKind IRTK)
 		{
+			//构建操作类型
 			switch (IRTK)
 			{
 				case IRTokenKind.MOV:
@@ -123,6 +124,8 @@ namespace compile_theory_5.Model.IRSystem
 					process = new IRProcess(InstructionType.NOP, operandCount);
 					break;
 			}
+
+			//构建操作数列表
 			switch (operandCount)
 			{
 				case 0:

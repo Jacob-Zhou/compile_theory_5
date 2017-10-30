@@ -12,8 +12,7 @@ namespace compile_theory_5.Model.IRSystem.IRInterpreter
 		public void Execute()
 		{
 			IRSystem.source.ShowIP();
-			IRSystem.cache.GetProcess(instructionPointer++).Run();
-			//instructionPointer++;
+			IRSystem.cache.GetProcess(instructionPointer++).Run(); //IP+1, 取指令, 执行;
 		}
 
 		public void Reset()
