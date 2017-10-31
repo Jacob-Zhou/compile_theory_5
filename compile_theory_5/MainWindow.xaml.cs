@@ -32,8 +32,6 @@ namespace compile_theory_5
 		{
 			InitializeComponent();
 			SourceViewModel.Init(sourceEditor);
-			//ProcessViewModel.Init(treeView);
-			//StateViewModel.Init(textBox);
 			ErrorViewModel.getInstance().Init(errorDataGrid, closeErrorButton);
 
 			IRSystem.Init(textEditor, VariableDataGrid, textBox);
@@ -55,15 +53,8 @@ namespace compile_theory_5
 		private void OpenFile(string path)
 		{
 			///TO DO
-			SourceViewModel.SourceData = File.ReadAllBytes(path);
+			//SourceViewModel.SourceData = File.ReadAllBytes(path);
 		}
-
-		//private void button_Click(object sender, RoutedEventArgs e)
-		//{
-		//	//Lexer.Test();
-		//	//Lexer.Highlighting();
-		//	Parser.parse();
-		//}
 
 		private void textEditor_Drop(object sender, DragEventArgs e)
 		{
@@ -102,11 +93,6 @@ namespace compile_theory_5
 			textEditor.TextArea.SelectionBrush = defaultBrush;
 			textEditor.Select(0, 0);
 		}
-
-		//private void treeView_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
-		//{
-		//	ProcessViewModel.ChangeMode();
-		//}
 
 		private void SaveCommands_Executed(object sender, ExecutedRoutedEventArgs e)
 		{
@@ -226,14 +212,5 @@ namespace compile_theory_5
 			sourceGrid.Visibility = Visibility.Hidden;
 			IRGrid.Visibility = Visibility.Visible;
 		}
-
-		//private void treeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-		//{
-		//	if(e.NewValue is Detail)
-		//	{
-		//		textEditor.Select(((Detail)e.NewValue).offset, ((Detail)e.NewValue).length);
-		//	}
-		//}
-
 	}
 }

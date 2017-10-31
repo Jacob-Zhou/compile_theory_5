@@ -17,12 +17,11 @@
 
 12: $bool -> $expr $bool1
 
-13: $bool1 -> < $bool2
-14:       |  > $bool2
-15:       |  NULL
-
-16: $bool2 -> $expr		<- ( ID NUM
-17:       |  = $expr
+13: $bool1 -> < $expr
+14:       |   > $expr
+15:	  |   <= $expr
+16:	  |   <= $expr
+17:       |   NULL
  
 18: $expr -> $term $expr1
 
