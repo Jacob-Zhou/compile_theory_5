@@ -77,7 +77,6 @@
     <Compile Include="Model\IRSystem\IRToken.cs" />
     <Compile Include="ViewModel\ErrorViewModel.cs" />
     <Compile Include="ViewModel\SourceViewModel.cs" />
-    <Compile Include="ViewModel\StateViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
